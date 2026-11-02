@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teo Rides</title>
+<link rel="icon" href="images/RideLogo.jpg">
+<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="images/RideLogo.jpg" alt="Teo Rides Logo" class="logo">
+    <div>
+      <h1>TEO <span>RIDES</span></h1>
+      <p>Come Get Your Lift</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="search">
+    <input type="text" id="fFrom" placeholder="From: Durban">
+    <input type="text" id="fTo" placeholder="To: JHB">
+    <input type="date" id="fDate">
+    <button id="btnSearch" onclick="applyFilter()">Search</button>
+    <button id="btnClear" onclick="clearFilter()">Clear</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="all" onclick="setTab('all')">All Rides</button>
+    <button class="tab" data-tab="driver" onclick="setTab('driver')">🚗 Drivers</button>
+    <button class="tab" data-tab="passenger" onclick="setTab('passenger')">🧍 Passengers</button>
+    <button class="tab post" onclick="openPost()">+ Post Ride</button>
+  </div>
+
+  <div id="lifts" class="lifts"></div>
+</div>
+
+<div id="postModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close" onclick="closePost()">&times;</span>
+    <h2>Post a Ride - Teo Rides</h2>
+    <div class="form">
+      <select id="pType" onchange="toggleDriverFields()">
+        <option value="driver">I AM A DRIVER - Offering Lift</option>
+        <option value="passenger">I NEED A LIFT - Looking for Lift</option>
+      </select>
+      <div class="row">
+        <input type="text" id="pFrom" placeholder="From *">
+        <input type="text" id="pTo" placeholder="To *">
+      </div>
+      <div class="row">
+        <input type="date" id="pDate">
+        <input type="time" id="pTime">
+      </div>
+      <div class="row">
+        <input type="number" id="pSeats" placeholder="Seats *">
+        <input type="number" id="pPrice" placeholder="Price R / seat">
+      </div>
+      <div id="driverFields">
+        <h4>Car Details (Driver)</h4>
+        <div class="row">
+          <input type="text" id="pCarMake" placeholder="Make e.g. Toyota">
+          <input type="text" id="pCarModel" placeholder="Model e.g. Corolla">
+        </div>
+        <div class="row">
+          <input type="text" id="pCarColor" placeholder="Color e.g. White">
+          <input type="text" id="pPlate" placeholder="Plate No. *">
+        </div>
+        <label>Car Picture (1) *</label>
+        <input type="file" id="pCarPic" accept="image/*">
+        <img id="preview" class="preview hidden">
+      </div>
+      <input type="text" id="pName" placeholder="Your Name *">
+      <input type="tel" id="pWA" placeholder="WhatsApp *">
+      <button class="submit" onclick="saveLift()">Post on Teo Rides</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="images/RideLogo.jpg" class="footer-logo">
+    <h3>TEO RIDES</h3>
+    <p>Come Get Your Lift — Fast, Safe, Local</p>
+    <p>Developed with ❤️ by <span>TeoCode</span></p>
+    <div class="social">
+      <a href="#">About</a> | <a href="#">Contact</a> | <a href="#">Terms</a>
+    </div>
+    <p class="copy">© 2026 Teo Rides. All Rights Reserved. | Built by <a href="https://s232175012.github.io/Portfolio">TeoCode</a></p>
+  </div>
+</footer>
+
+<script src="script/javascrip.js"></script>
+</body>
+</html>
