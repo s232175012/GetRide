@@ -16,14 +16,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const ridesCol = collection(db, "rides");
 
-if(rides.length===0){
-  rides = [
-    {id:1, type:'driver', from:'Port Elizabeth', to:'Kokstad', date:'2026-11-06', time:'09:00', seats:3, price:350, name:'Liya', whatsapp:'0781234567', carMake:'Toyota', carModel:'Corolla', carColor:'White', plate:'ND 123-456', carImage:'images/car.png'},
-    {id:2, type:'passenger', from:'Cape Town', to:'Durban', date:'2026-12-13', time:'16:00', seats:2, name:'Thando', whatsapp:'0781234567'},
-  ];
-  localStorage.setItem('teo_ride', JSON.stringify(lifts));
-}
-
 let allRides = [];
 let activeTab = 'all';
 let filter = {from:'', to:'', date:''};
