@@ -24,15 +24,15 @@
     <input type="text" id="fFrom" placeholder="From: Durban">
     <input type="text" id="fTo" placeholder="To: JHB">
     <input type="date" id="fDate">
-    <button id="btnSearch" onclick="applyFilter()">Search</button>
-    <button id="btnClear" onclick="clearFilter()">Clear</button>
+    <button id="btnSearch">Search</button>
+    <button id="btnClear">Clear</button>
   </div>
 
   <div class="tabs">
-    <button class="tab active" data-tab="all" onclick="setTab('all')">All Rides</button>
-    <button class="tab" data-tab="driver" onclick="setTab('driver')">🚗 Drivers</button>
-    <button class="tab" data-tab="passenger" onclick="setTab('passenger')">🧍 Passengers</button>
-    <button class="tab post" onclick="openPost()">+ Post Ride</button>
+    <button class="tab active" data-tab="all">All Rides</button>
+    <button class="tab" data-tab="driver">🚗 Drivers</button>
+    <button class="tab" data-tab="passenger">🧍 Passengers</button>
+    <button class="tab post" id="btnOpenPost">+ Post Ride</button>
   </div>
 
   <div id="lifts" class="lifts"></div>
@@ -40,10 +40,10 @@
 
 <div id="postModal" class="modal hidden">
   <div class="modal-content">
-    <span class="close" onclick="closePost()">&times;</span>
+    <span class="close" id="btnClose">&times;</span>
     <h2>Post a Ride - Teo Rides</h2>
     <div class="form">
-      <select id="pType" onchange="toggleDriverFields()">
+      <select id="pType">
         <option value="driver">I AM A DRIVER - Offering Lift</option>
         <option value="passenger">I NEED A LIFT - Looking for Lift</option>
       </select>
@@ -71,11 +71,11 @@
         </div>
         <label>Car Picture (1) *</label>
         <input type="file" id="pCarPic" accept="image/*">
-        <img id="preview" class="preview hidden">
+        <img id="preview" class="preview hidden" style="width:100%;max-height:200px;object-fit:cover;margin-top:10px;border-radius:10px;">
       </div>
       <input type="text" id="pName" placeholder="Your Name *">
-      <input type="tel" id="pWA" placeholder="WhatsApp *">
-      <button class="submit" onclick="saveLift()">Post on Teo Rides</button>
+      <input type="tel" id="pWA" placeholder="WhatsApp e.g. 071... *">
+      <button class="submit" id="btnPost">Post on Teo Rides</button>
     </div>
   </div>
 </div>
@@ -86,13 +86,9 @@
     <h3>TEO RIDES</h3>
     <p>Come Get Your Lift — Fast, Safe, Local</p>
     <p>Developed with ❤️ by <span>TeoCode</span></p>
-    <div class="social">
-      <a href="#">About</a> | <a href="#">Contact</a> | <a href="#">Terms</a>
-    </div>
-    <p class="copy">© 2026 Teo Rides. All Rights Reserved. | Built by <a href="https://s232175012.github.io/Portfolio">TeoCode</a></p>
   </div>
 </footer>
 
-<script type="module" src="script/javascrip.js"></script>
+<script type="module" src="script/javascrip.js?v=5"></script>
 </body>
 </html>
